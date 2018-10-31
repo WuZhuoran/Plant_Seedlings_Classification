@@ -1,0 +1,5 @@
+# Task Data and Image Folder
+*.zip
+*.csv
+train/
+test/
