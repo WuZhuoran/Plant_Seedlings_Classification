@@ -28,7 +28,9 @@ The Plant Seedlings Dataset contains images of approximately 960 unique plants b
 
 This is a supervised learning task. There are two sets of images (training and testing) provided for study. A training set of images is organized by plant species in 12 seperate folders. Each images has a unique id that can be easily linked to its plant specie. A testing set of images is just a mix of 12 plant species. 
 
-One limitation of the data is the size of training set is relatively small. On average, there are about 400 images in each class. Small dataset could result in overfitting. It is hard to collect more data since the background of the Plant Seedlings Dataset are unique. Most images have bar code, pebblestone, metal device and wall. Images from different source are very likely to have other background and disturb the model learning. Another potential limitation is that the dataset is imbalanced. For example, there are 654 Loose Silky-bent images but only 221 Common Wheat. The model could be inclined to predicting larger class. 
+One limitation of the data is the size of training set is relatively small. On average, there are about 400 images in each class. Small dataset could result in overfitting. It is hard to collect more data since the background of the Plant Seedlings Dataset are unique. Most images have bar code, pebblestone, metal device and wall. Images from different source are very likely to have other background and disturb the model learning. 
+
+Another potential limitation is that the dataset is imbalanced. For example, there are 654 Loose Silky-bent images but only 221 Common Wheat. The model could be inclined to predicting larger class. 
 
 
 
