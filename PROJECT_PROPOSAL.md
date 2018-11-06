@@ -47,9 +47,9 @@ Second, the dataset is imbalanced. For example, there are 654 Loose Silky-bent i
 
 We will select categorical cross entropy as our loss function since the categorical cross entropy is preferred for mutually-exclusive multi-class classification task (where each example belongs to a single class) compared to other metrics. 
 
-We will use provided testing set as the baseline dataset for models evaluation. The baseline model of our project is multi-class Logistic regression. We will choose micro-averaged F1 score as the major evaluation matrix since it is selected in the Kaggle competition, and it is easier to compare the performance of our model with previous works. In addition, F1 score could balance the precision and recall and yield a more realistic indication of model performance. We would also use confusion matrix to visualize the prediction results.
+We will use the whole dataset as the baseline dataset for models evaluation because the Plant Seeding dataset is pretty small. The baseline model of our project is CNN with ResNet50 and multi-class Logistic regression. We will choose micro-averaged F1 score as the major evaluation matrix since it is selected in the Kaggle competition, and it is easier to compare the performance of our model with previous works. In addition, F1 score could balance the precision and recall and yield a more realistic indication of model performance. We would also use confusion matrix to visualize the prediction results.
 
-Besides baseline models, we plan to experiment with models such as simple Neural Network model, CNN models (pre-trained models) and ensemble model with XGBoost to see their performances. The state of the art F1 score is achieved by a customized 10 layer CNN models. Pre-trained model, Xception, also yields a similar state of art result. 
+Besides baseline models, we plan to experiment with models such as simple Neural Network model, CNN models (pre-trained models) and ensemble model with XGBoost to see their performances. The state of the art F1 score is achieved by a DenseNet 161 model (F-1 score 98.236). Pre-trained model, Xception, also yields a similar state of art result. 
 
 
 
