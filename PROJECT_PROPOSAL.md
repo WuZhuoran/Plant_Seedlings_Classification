@@ -17,7 +17,7 @@ The code will be available online at [https://github.com/WuZhuoran/Plant_Seedlin
 ## Team
 
 * [Yi Ding]()
-* [Yu Xiao]()
+* [Yu Xiao](https://github.com/troyxiao) [yx151@georgetown.edu](mailto:yx151@georgetown.edu)
 * [Zhuoran Wu](https://github.com/WuZhuoran) [zw118@georgetown.edu](mailto:zw118@georgetown.edu)
 
 ## Project's Goal and Objectives
@@ -33,7 +33,7 @@ Following are sample images for each species:
 <img width="1381" alt="screen shot 2018-11-06 at 1 59 51 pm" src="https://user-images.githubusercontent.com/7198810/48087093-66dae680-e1cc-11e8-81e8-96d878418bf2.png">
 
 
-This is a supervised learning task. There are two sets of images (training and testing) provided for study. A training set of images is organized by plant species in 12 seperate folders. Each images has a unique id that can be easily linked to its plant species. A testing set of images is just a mix of 12 plant species. 
+This is a supervised learning task. The input feature vector is images and the output is probability distribution of the classification. There are two sets of images (training and testing) provided for study. A training set of images is organized by plant species in 12 seperate folders. Each images has a unique id that can be easily linked to its plant species. A testing set of images is just a mix of 12 plant species. 
 There are a few limitation of this dataset. First,  the size of training set is relatively small. On average, there are about 400 images in each class. Small dataset could result in overfitting. It is hard to collect more data since the background of the Plant Seedlings Dataset are unique. Most images have bar code, pebblestone, metal device and wall. Images from different source are very likely to have other background and disturb the model learning. 
 
 
