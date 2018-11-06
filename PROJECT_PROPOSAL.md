@@ -109,6 +109,8 @@ We will train and test our task both on local and cloud machine.
 
 * Cloud Machine
 
+Clouc Machine we use `AWS`, and `Kaggle`.
+
 * Local Machine
 
 ### Limitations of platform
