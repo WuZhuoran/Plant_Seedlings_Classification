@@ -27,11 +27,15 @@ The code will be available online at [https://github.com/WuZhuoran/Plant_Seedlin
 The Plant Seedlings Dataset contains images of approximately 960 unique plants belonging to 12 species at several growth stages. It comprises annotated RGB images with a physical resolution of roughly 10 pixels per mm.The dataset comes from Aarhus University Flakkebjerg Research station in a collaboration between University of Southern Denmark and Aarhus University (https://vision.eng.au.dk/plant-seedlings-dataset/). This is the only data source that will be used in our project.  The dataset is publicly available and used in a Kaggle challenge. The dataset is collected by professional researchers specifically for the plant classification task and is a reliable data source. The goal of the competition is to create a classifier capable of determining a plant's species from a image. The list of species are: Black-grass, Charlock, Cleavers, Common Chickweed, Common Wheat, Fat Hen, Loose Silky-bent,  Maize, Scentless Mayweed, Shepherds Purse, Small-flowered Cranesbill, Sugar beet. 
 The size of each species is shown in the pie chart:
 <img width="721" alt="speciessize" src="https://user-images.githubusercontent.com/7198810/48086786-ae14a780-e1cb-11e8-877d-9b3b02157062.png">
+
 Following are sample images for each species:
 <img width="1381" alt="screen shot 2018-11-06 at 1 59 51 pm" src="https://user-images.githubusercontent.com/7198810/48087093-66dae680-e1cc-11e8-81e8-96d878418bf2.png">
+
 This is a supervised learning task. There are two sets of images (training and testing) provided for study. A training set of images is organized by plant species in 12 seperate folders. Each images has a unique id that can be easily linked to its plant species. A testing set of images is just a mix of 12 plant species. 
 There are a few limitation of this dataset. First,  the size of training set is relatively small. On average, there are about 400 images in each class. Small dataset could result in overfitting. It is hard to collect more data since the background of the Plant Seedlings Dataset are unique. Most images have bar code, pebblestone, metal device and wall. Images from different source are very likely to have other background and disturb the model learning. 
+
 <img width="772" alt="screen shot 2018-11-06 at 2 11 12 pm" src="https://user-images.githubusercontent.com/7198810/48087651-e5845380-e1cd-11e8-8cc4-33424adf28d9.png">
+
 Second, the dataset is imbalanced. For example, there are 654 Loose Silky-bent images but only 221 Common Wheat images. In this case, the model could be inclined to predicting larger class. Third, images in this dataset come in different size. Small images is about 75*75 pixels while large image can be 3991*3457 pixels. Even if we could resize all images to 224*224 pixels, which is a common input size for pre-trained model, small images would be in low quality (visually blurry) since they are enlarged. 
 
 
