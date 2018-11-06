@@ -53,6 +53,8 @@ And we will also try some traditional methods in order to compare the result.
 
 In paper [2], the authors present method about plant identification with Deep Learning Method.  
 
+### Approach List
+
 Here is our Approach List:
 
 1. Logistic Regression   
@@ -81,6 +83,40 @@ Here is our Approach List:
 7. Data Augmentation     
    Data pre-processing and data augmentation will also be used in the task.
 
+
+### Possible limitations of approach
+
+Currently we mainly consider `Convolutional Neural Network` as our network structure. 
+Therefore we might face those problems:
+
+* Hyperparamter tuning is non-trivial
+* Need a large dataset
+* The scale of a net's weights (and of the weight updates) is very important for performance. When the features are of the same type (pixels, word counts, etc), this is not a problem. However, when the features are heterogeneous--like in many Kaggle datasets--your weights and updates will all be on different scales (so you need to standardize your inputs in some way).
+* cost effective
+
+### Tools & API 
+
+The details of python packages are listed in the [requirements](requirements.txt) file.
+
+We will mainly use [Tensorflow](https://www.tensorflow.org/) and [Keras](https://keras.io/) as our Deep Learning Framework. 
+Also [PyTorch](https://pytorch.org/) will be used in some approach. 
+
+We will use [sklearn](http://scikit-learn.org/) and [skimage](https://scikit-image.org/) for data processing and traditional method.
+
+### Training & Test Platform
+
+We will train and test our task both on local and cloud machine.
+
+* Cloud Machine
+
+* Local Machine
+
+### Limitations of platform
+
+For Cloud Machine, the platform is hard to control and has less flexibility. 
+Also the cost will be large if we only use enterprise cloud machine.
+
+For Local Machine, it might be slow and short of memory because local computer do not always have a good CPU or RAM.
 
 ## Reference
 
