@@ -16,11 +16,100 @@ The code will be available online at [https://github.com/WuZhuoran/Plant_Seedlin
 
 ## Team
 
-* [Yi Ding]()
+* [Yi Ding](https://github.com/dy11) [yd137@georgetown.edu](mailto:yd137@georgetown.edu)
 * [Yu Xiao](https://github.com/troyxiao) [yx151@georgetown.edu](mailto:yx151@georgetown.edu)
 * [Zhuoran Wu](https://github.com/WuZhuoran) [zw118@georgetown.edu](mailto:zw118@georgetown.edu)
 
 ## Project's Goal and Objectives
+
+We choose to participate in the kaggle competition Plant Seedlings Classification as our final project.
+It is a typical supervised multiclass classification problem. We are supposed to identify the different weed from a crop seedling image.
+
+* DataSet:
+
+The dataset has 12 different plaint classes. The image number of each class is as follow.
+
+| image number of each class | 
+| :------| 
+| Black-grass	263 | 
+| Charlock	390 | 
+| Cleavers	287 | 
+| Maize		221 | 
+| Common Chickweed	611 | 
+| Common wheat	221 | 
+| Fat Hen	475 | 
+| Loose Silky-bent	654 | 
+| Scentless Mayweed 516 | 
+| Shepherds Purse	231 | 
+| Small-flowered Cranesbill	496 | 
+| Sugar beet	385 | 
+
+The expected end result of this problem for each test query is a probability distribution of the classification.
+
+We took the pre-trained model resnet50 as our benchmark. I just Freeze layers except the fully connected layer and set Learning rate = 0.001 and training 20 epochs.
+
+### Performance on val dataset：
+
+             precision    recall  f1-score   support
+
+          0       0.60      0.94      0.73        50
+          1       1.00      0.96      0.98        50
+          2       0.94      0.94      0.94        50
+          3       0.74      0.92      0.82        50
+          4       0.91      0.82      0.86        50
+          5       1.00      0.94      0.97        50
+          6       0.82      0.56      0.67        50
+          7       0.91      0.98      0.94        50
+          8       0.87      0.96      0.91        50
+          9       0.97      0.62      0.76        50
+         10       1.00      0.94      0.97        50
+         11       0.92      0.88      0.90        50
+
+
+- Epcch 19: loss=0.62 acc=0.87
+
+After that, we suppose to use some different evaluation method and try a couple of different network model.
+
+And we have serval unique idea to solve this problem better.
+
+*	Generate mask for seeds by semantic segmentation:
+
+We could manually label some of the images, combine the data from kaggle and the tutorial from opencv and apply semi-supervised learning.
+
+*	Use GAN to augment data:
+
+The image size distribution of dataset is:
+
+[0, 64) 1.26%
+
+[64, 96)  7.73%
+
+[96, 128) 11.28%
+
+[128, 160)  12.06%
+
+[160, 192)  10.11%
+
+[192, 224)  3.89%
+
+[224, 256)  3.12%
+
+[256, 512)  25.96%
+
+[512, 1024) 19.96%
+
+[1024, 2048)  4.38%
+
+[2048, 4096]  0.25%
+
+We can see that there are almost half of the image are smaller than 225 pixels. And resize the image smaller than 224 may not rational method to deal with them. I considered that we could use GAN instead of resizing to do data augmentation. 
+
+*	Hierarchical loss:
+
+Since some of the crops are really similar, we could calculate the confusion matrix for each pair of class, for those confusion are relatively large consider combine them as a superclass. And add an auxiliary branch on our network for fine-grain classification in the superclass. Just like the hierarchical softmax from word2vec. 
+
+
+
 
 ## Data
 
