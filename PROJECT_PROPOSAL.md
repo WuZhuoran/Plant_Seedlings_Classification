@@ -2,15 +2,15 @@
 
 ## Introduction
 
-For several decades, researchers have worked on systems aimed at performing site-specific weed control.
+For several decades, researchers have been worked on systems that aim to perform site-specific weed control.
 Although some systems are commercially available, 
 a true commercial breakthrough of such systems is still to come despite the construction
 of several prototypes and case studies showing promising results.
 
-In this project, we will work to build a classification model for 
+In this project, we will build serveral classification models on 
 a [database](https://vision.eng.au.dk/plant-seedlings-dataset) 
 of images of approximately 960 unique plants belonging to 12 species at several growth stages.
-It is also a Kaggle [competition](https://www.kaggle.com/c/plant-seedlings-classification).
+This task is also a Kaggle [competition](https://www.kaggle.com/c/plant-seedlings-classification).
 
 The code will be available online at [https://github.com/WuZhuoran/Plant_Seedlings_Classification].
 
@@ -23,7 +23,7 @@ The code will be available online at [https://github.com/WuZhuoran/Plant_Seedlin
 ## Project's Goal and Objectives
 
 We choose to participate in the kaggle competition Plant Seedlings Classification as our final project.
-It is a typical supervised multiclass classification problem. We are supposed to identify the different weed from a crop seedling image.
+Plant Seedlings Classification is a typical supervised, multiclass classification problem. We aim to identify the different weed from a crop seedling image.
 
 * DataSet:
 
@@ -44,9 +44,9 @@ The dataset has 12 different plaint classes. The image number of each class is a
 | Small-flowered Cranesbill	496 | 
 | Sugar beet	385 | 
 
-The expected end result of this problem for each test query is a probability distribution of the classification.
+The expected end result of this task for each test query is a probability distribution of the classification.
 
-We took the pre-trained model resnet50 as our benchmark. I just Freeze layers except the fully connected layer and set Learning rate = 0.001 and training 20 epochs.
+We take the pre-trained model resnet50 as our benchmark. We will freeze layers except the fully connected layer and set Learning rate = 0.001 and training 20 epochs.
 
 ### Performance on val dataset：
 
@@ -68,13 +68,13 @@ We took the pre-trained model resnet50 as our benchmark. I just Freeze layers ex
 
 - Epcch 19: loss=0.62 acc=0.87
 
-After that, we suppose to use some different evaluation method and try a couple of different network model.
+After that, we will use some different evaluation methods and try a couple of different network models.
 
-And we have serval unique idea to solve this problem better.
+We will also propose serval unique idea to tacle this problem better.
 
 *	Generate mask for seeds by semantic segmentation:
 
-We could manually label some of the images, combine the data from kaggle and the tutorial from opencv and apply semi-supervised learning.
+We will manually label some of the images, combine the data from kaggle and the tutorial from opencv and apply semi-supervised learning.
 
 *	Use GAN to augment data:
 
@@ -102,11 +102,11 @@ The image size distribution of dataset is:
 
 [2048, 4096]  0.25%
 
-We can see that there are almost half of the image are smaller than 225 pixels. And resize the image smaller than 224 may not rational method to deal with them. I considered that we could use GAN instead of resizing to do data augmentation. 
+We can see that there are almost half of the image are smaller than 225*225 pixels. Resizing the image smaller than 224*224 pixels to a larger size may not be a good practice. We will try to use GAN instead of resizing for data augmentation. 
 
 *	Hierarchical loss:
 
-Since some of the crops are really similar, we could calculate the confusion matrix for each pair of class, for those confusion are relatively large consider combine them as a superclass. And add an auxiliary branch on our network for fine-grain classification in the superclass. Just like the hierarchical softmax from word2vec. 
+Since some of the crops are really similar, we can calculate the confusion matrix for each pair of class. We will consider about combining relatively large confusion as a superclass, and adding an auxiliary branch on our network for fine-grain classification in the superclass, e.g. the hierarchical softmax from word2vec. 
 
 
 
@@ -160,9 +160,12 @@ Here is our Approach List:
 2. Neural Network Method    
    We will build some simple neural network to test if Deep Learning could do great in this task.
    
-3. Convolutional Neural Network with Pre-trained Model     
-   We will try different Pre-trained Model. Those model will either be used for extracting features or
-   for classifiction.
+3. Convolutional Neural Network(CNN) with Pre-trained Model 
+   CNN is very good at image classification. There are many pre-trained Model in libraries such as Keras, in this project,
+   we will experiment with different Pre-trained Model. Models will either be used for features selection or classifiction.
+   There are serveral benefits of applying pretrained models. For example, pre-trained models can save training time and it  
+   does not require a lot of data to train a Neural Network from scratch. Pre-trained models usually yield a better results 
+   than stacking a CNN model manually. 
    
 4. Convolutional Neural Network with regularization, optimizer and other method    
    We will introduce some regularization method in NN model which includes but noe limited as:
@@ -172,19 +175,19 @@ Here is our Approach List:
    We will compare the results with other results.
    
 5. Ensemble Method with XGBoost.     
-   We will use ensemble method for our different models.
+   We will use ensemble method for our different models. Ensemble methods can potentially combine the strengh of individul models. 
    
 6. Deep Learning Method + Traditional Method (SVM)    
-   We will try to find a way to combine both traditional method and deep learning methods. 
+   We will try to combine both traditional method and deep learning methods. 
    
 7. Data Augmentation     
-   Data pre-processing and data augmentation will also be used in the task.
+   Data pre-processing and data augmentation will be used in the task.
 
 
 ### Possible limitations of approach
 
-Currently we mainly consider `Convolutional Neural Network` as our network structure. 
-Therefore we might face those problems:
+We mainly consider `Convolutional Neural Network` as our network structure. 
+And we might run into the following challenges:
 
 * Hyperparamter tuning is non-trivial
 * Need a large dataset
@@ -193,7 +196,7 @@ Therefore we might face those problems:
 
 ### Tools & API 
 
-The details of python packages are listed in the [requirements](requirements.txt) file.
+Details of python packages are listed in the [requirements](requirements.txt) file.
 
 We will mainly use [Tensorflow](https://www.tensorflow.org/) and [Keras](https://keras.io/) as our Deep Learning Framework. 
 Also [PyTorch](https://pytorch.org/) will be used in some approach. 
@@ -202,11 +205,11 @@ We will use [sklearn](http://scikit-learn.org/) and [skimage](https://scikit-ima
 
 ### Training & Test Platform
 
-We will train and test our task both on local and cloud machine.
+We will train and test our task both on cloud machine and local machine.
 
 * Cloud Machine
 
-Clouc Machine we use `AWS`, and `Kaggle`.
+We will mainly use `AWS`, and `Kaggle`.
 
 * Local Machine
 
