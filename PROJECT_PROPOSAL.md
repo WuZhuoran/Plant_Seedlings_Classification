@@ -181,8 +181,8 @@ Here is our Approach List:
    We will experiment with combining both traditional method and deep learning methods. 
    
 7. Data Augmentation     
-   Data pre-processing and data augmentation will be used in the task. Pre-processing dataset can remove noises before the training   
-   process. Data augmentation could largely improve the robustness of models.  
+   Data pre-processing and data augmentation will be used in the task. Pre-processing dataset can remove noises before training. 
+   Data augmentation could largely improve the robustness of models.  
 
 
 ### Possible limitations of approach
