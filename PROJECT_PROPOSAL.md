@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For several decades, researchers have been worked on systems that aim to perform site-specific weed control.
+For several decades, researchers have been working on systems that aim to perform site-specific weed control.
 Although some systems are commercially available, 
 a true commercial breakthrough of such systems is still to come despite the construction
 of several prototypes and case studies showing promising results.
@@ -158,7 +158,7 @@ Here is our Approach List:
    We want to use multi-class Logistic regression to build a quick baseline.
    
 2. Neural Network Method    
-   We will build some simple neural network to test if Deep Learning could do great in this task.
+   We will build some simple neural network to test if Deep Learning could do better in this task.
    
 3. Convolutional Neural Network(CNN) with Pre-trained Model 
    CNN is very good at image classification. There are many pre-trained Model in libraries such as Keras, in this project,
@@ -178,7 +178,7 @@ Here is our Approach List:
    We will use ensemble method for our different models. Ensemble methods can potentially combine the strengh of individul models. 
    
 6. Deep Learning Method + Traditional Method (SVM)    
-   We will try to combine both traditional method and deep learning methods. 
+   We will experiment with combining both traditional method and deep learning methods. 
    
 7. Data Augmentation     
    Data pre-processing and data augmentation will be used in the task.
