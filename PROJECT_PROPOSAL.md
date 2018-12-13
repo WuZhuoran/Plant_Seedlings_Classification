@@ -31,22 +31,22 @@ The dataset has 12 different plaint classes. The image number of each class is a
 
 | image number of each class | 
 | :------| 
-| Black-grass	263 | 
-| Charlock	390 | 
-| Cleavers	287 | 
-| Maize		221 | 
-| Common Chickweed	611 | 
-| Common wheat	221 | 
-| Fat Hen	475 | 
-| Loose Silky-bent	654 | 
+| Black-grass 263 | 
+| Charlock  390 | 
+| Cleavers  287 | 
+| Maize   221 | 
+| Common Chickweed  611 | 
+| Common wheat  221 | 
+| Fat Hen 475 | 
+| Loose Silky-bent  654 | 
 | Scentless Mayweed 516 | 
-| Shepherds Purse	231 | 
-| Small-flowered Cranesbill	496 | 
-| Sugar beet	385 | 
+| Shepherds Purse 231 | 
+| Small-flowered Cranesbill 496 | 
+| Sugar beet  385 | 
 
-The expected end result of this problem for each test query is a probability distribution of the classification.
+The expected end result of this task for each test query is a probability distribution of the classification.
 
-We took the pre-trained model resnet50 as our benchmark. I just Freeze layers except the fully connected layer and set Learning rate = 0.001 and training 20 epochs.
+We take the pre-trained model resnet50 as our benchmark. We will freeze layers except the fully connected layer and set Learning rate = 0.001 and training 20 epochs.
 
 ### Performance on val dataset：
 
@@ -72,11 +72,11 @@ After that, we will use some different evaluation methods and try a couple of di
 
 We will also propose serval unique idea to tacle this problem better.
 
-*	Generate mask for seeds by semantic segmentation:
+* Generate mask for seeds by semantic segmentation:
 
 We will manually label some of the images, combine the data from kaggle and the tutorial from opencv and apply semi-supervised learning.
 
-*	Use GAN to augment data:
+* Use GAN to augment data:
 
 The image size distribution of dataset is:
 
@@ -104,7 +104,7 @@ The image size distribution of dataset is:
 
 We can see that there are almost half of the image are smaller than 225*225 pixels. Resizing the image smaller than 224*224 pixels to a larger size may not be a good practice. We will try to use GAN instead of resizing for data augmentation. 
 
-*	Hierarchical loss:
+* Hierarchical loss:
 
 Since some of the crops are really similar, we can calculate the confusion matrix for each pair of class. We will consider about combining relatively large confusion as a superclass, and adding an auxiliary branch on our network for fine-grain classification in the superclass, e.g. the hierarchical softmax from word2vec. 
 
