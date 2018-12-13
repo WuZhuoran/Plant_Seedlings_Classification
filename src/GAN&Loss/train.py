@@ -1,16 +1,15 @@
 # -*- coding:utf-8 -*-
 __author__ = 'Yi'
 
-import os
 import argparse
+import os
+
 import torch
-from torch.utils.data import DataLoader, Dataset
 import torch.nn as nn
 import torchvision.transforms as transforms
 from PIL import Image
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-import torch.nn.functional as F
-from PIL import Image
+from sklearn.metrics import accuracy_score
+from torch.utils.data import DataLoader, Dataset
 
 
 def load_txt(filepath, split_sym='\t'):
@@ -132,7 +131,7 @@ def eval_network(net, val_dataset, batch_size):
     # except:
     #     np.set_printoptions(threshold=np.nan)
 
-    from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, f1_score
+    from sklearn.metrics import classification_report, accuracy_score
     print(classification_report(y_true, y_pred))
 
     return accuracy_score(y_true, y_pred)

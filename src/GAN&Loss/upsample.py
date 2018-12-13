@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 __author__ = 'Yi'
 
-import os
 import glob
+import os
 
 import cv2
 import numpy as np
@@ -10,6 +10,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from tqdm import tqdm
+
 
 class Gx2(nn.Module):
     def __init__(self):
