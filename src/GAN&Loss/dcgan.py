@@ -9,11 +9,9 @@ import pickle
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.utils.data import DataLoader
-from torchvision.models import AlexNet
-from torchvision.utils import save_image
-
 from dataset import DSDataset, tensorify_img
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image
 
 os.makedirs('images', exist_ok=True)
 os.makedirs('wts', exist_ok=True)
@@ -272,7 +270,7 @@ if __name__ == '__main__':
             preds = discriminator(gen_imgs)
 
             # Loss measures generator's ability to fool the discriminator
-            fool_loss = adversarial_loss(preds, valid) #here set target is valid but not fake
+            fool_loss = adversarial_loss(preds, valid)  # here set target is valid but not fake
             dist_loss = mae_loss(gen_imgs, real_imgs)
 
             g_loss = dist_loss + alpha * fool_loss
