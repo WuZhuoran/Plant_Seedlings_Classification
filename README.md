@@ -11,6 +11,10 @@ as well as the final project of ANLY 590.
 
 More information related to project could be found at [Project Proposal](docs/PROJECT_PROPOSAL.md).
 
+Poster could be found [here](docs/PROJECT_POSTER.pdf).
+
+Final Paper could be found [here](docs/Plant_Seedling_Classification_Final_Paper.pdf).
+
 ## Getting Started
 
 ### Download Data
@@ -19,8 +23,11 @@ You could download data from [website](https://www.kaggle.com/c/plant-seedlings-
 or use [Kaggle API](https://github.com/Kaggle/kaggle-api) as following:
 
 ```bash
+cd input
 kaggle competitions download -c plant-seedlings-classification
 ```
+
+Please download data into [input](input) folder.
 
 ### Installing Requirement
 
@@ -53,7 +60,7 @@ You could check notebook via Jupter.
 |9 Layers + ADASYN + Data Augmentation + Snapshot Ensemble|1,775,100|0.98740|
 |CNN DenseNet 121 + Data Augmentation + Background Remove|8,062,504|0.94710|
 |CNN DenseNet 121 + Data Augmentation + GAN + Background Remove|8,062,504|0.97984|
-|State of Art on Kaggle|54,521,176|0.99496|
+|State of Art on Kaggle[8]|54,521,176|0.99496|
 
 ## Author
 
